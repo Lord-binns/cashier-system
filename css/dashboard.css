@@ -2,6 +2,13 @@
     font-size: 2rem;
     color: #f8f9fa !important;
 }
+
+.table-responsive {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    margin-top: 20px; /* Optional: Space above the table */
+}
+
+
 /* Custom styles for the offcanvas sidebar */
 .offcanvas {
     background-color: #343a40; /* Dark background for sidebar */
@@ -55,4 +62,102 @@
 
 .btn-secondary:hover {
     background-color: #5a6268; /* Darker gray on hover */
+}
+
+/* General body styles */
+body {
+    font-family: Arial, sans-serif; /* Set a default font */
+    background-color: #f8f9fa; /* Light background color */
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #343a40; /* Dark background for navbar */
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #ffffff; /* White text color */
+}
+
+.navbar .nav-link:hover {
+    color: #ffc107; /* Yellow color on hover */
+}
+
+/* Container styles */
+.container {
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside the container */
+}
+
+/* Table styles */
+.table {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full width */
+}
+
+.table th,
+.table td {
+    padding: 12px; /* Padding for cells */
+    text-align: left; /* Align text to the left */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2; /* Light gray for odd rows */
+}
+
+.table-dark {
+    background-color: #343a40; /* Dark background for table header */
+    color: #ffffff; /* White text for header */
+}
+
+/* Alert styles */
+.alert {
+    margin-bottom: 20px; /* Space below alerts */
+}
+
+/* Modal styles */
+.modal-content {
+    border-radius: 8px; /* Rounded corners for modals */
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6; /* Border below header */
+}
+
+/* Button styles */
+.btn {
+    border-radius: 4px; /* Rounded corners for buttons */
+}
+
+.btn-warning {
+    background-color: #ffc107; /* Custom warning color */
+    color: #000; /* Black text for contrast */
+}
+
+.btn-warning:hover {
+    background-color: #e0a800; /* Darker warning on hover */
+}
+
+/* Scrollable Table */
+.scrollable-table {
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .table th,
+    .table td {
+        padding: 8px; /* Smaller padding for cells */
+    }
+
+    .btn {
+        font-size: 0.9rem; /* Smaller button text */
+    }
 }

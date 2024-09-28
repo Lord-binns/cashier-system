@@ -7,9 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogout" aria-controls="offcanvasLogout">
-                        <i class="bi bi-list"></i> 
-                    </button>
+                <div class="d-flex align-items-center">
+    <button class="btn btn-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogout" aria-controls="offcanvasLogout">
+        <i class="bi bi-list"></i>
+    </button>
+  
+</div>
+
                 </li>
             </ul>
         </div>
@@ -19,12 +23,17 @@
 <!-- Offcanvas Logout Menu -->
 <div class="offcanvas offcanvas-end d-flex flex-column" tabindex="-1" id="offcanvasLogout" aria-labelledby="offcanvasLogoutLabel" style="height: 100%;">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasLogoutLabel">Options</h5>
+        <h5 class="offcanvas-title" id="offcanvasLogoutLabel"> Menu Options</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body flex-grow-1">
-        <p>Are you sure you want to logout?</p>
+        <p> Admin Nav Bar</p>
         <div class="d-grid gap-2">
+            
+        <a href="dashboard.php" class="btn btn-secondary">
+    <i class="bi bi-grid"></i> Back to Dashboard
+</a>
+
             <a href="adminList.php" class="btn btn-success">
                 <i class="bi bi-person"></i> Edit Users
             </a>
