@@ -21,7 +21,7 @@ class User extends Database {
         // Proceed with registration if username is available
         $sql = "INSERT INTO users (first_name, last_name, username, password) VALUES (?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssss", $first_name, $last_name, $username, $password); // Bind values to the query
+        $stmt->bind_param("ssss", $first_name, $last_name, $username, $password);
         
         if ($stmt->execute()) {
             return true; // Registration successful
@@ -60,32 +60,35 @@ class User extends Database {
         return $this->error;
     }
 
+    // Method to retrieve user details by username
     public function getUserDetails($username) {
-        // Prepare SQL query to fetch user details by username
         $sql = "SELECT * FROM users WHERE username = ?";
         $stmt = $this->conn->prepare($sql);
-    
-        // Check if the statement was prepared correctly
-        if (!$stmt) {
-            die("Error preparing SQL statement: " . $this->conn->error);
-        }
-    
-        // Bind the username parameter to the SQL statement
         $stmt->bind_param("s", $username);
-    
-        // Execute the query
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
+
+    // Method to fetch all users
+    public function getAllUsers() {
+        $sql = "SELECT * FROM users"; // Query to select all users
+        $stmt = $this->conn->prepare($sql);
+        
         if ($stmt->execute()) {
             $result = $stmt->get_result();
-            if ($result->num_rows > 0) {
-                // Return user details as an associative array
-                return $result->fetch_assoc();
-            } else {
-                // No user found
-                return null;
-            }
+            return $result->fetch_all(MYSQLI_ASSOC); // Return users as an associative array
         } else {
             die("Error executing SQL statement: " . $stmt->error);
         }
     }
 
+    // Method to update a user
+    public function updateUser($id, $first_name, $last_name, $username, $role) {
+        $sql = "UPDATE users SET first_name = ?, last_name = ?, username = ?, role = ? WHERE id = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("ssssi", $first_name, $last_name, $username, $role, $id);
+        
+        return $stmt->execute(); // Execute and return true/false
+    }
 }

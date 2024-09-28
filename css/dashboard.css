@@ -1,0 +1,58 @@
+.navbar-brand {
+    font-size: 2rem;
+    color: #f8f9fa !important;
+}
+/* Custom styles for the offcanvas sidebar */
+.offcanvas {
+    background-color: #343a40; /* Dark background for sidebar */
+    color: #ffffff; /* Light text color */
+    padding: 20px; /* Add some padding */
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #495057; /* Add a border at the bottom of the header */
+}
+
+.offcanvas-title {
+    font-size: 1.5rem; /* Larger font for the title */
+}
+
+.offcanvas-body p {
+    font-size: 1.1rem; /* Slightly larger font for body text */
+    margin-bottom: 20px; /* Space below paragraph */
+}
+
+/* Modify button styles */
+.btn {
+    margin-bottom: 10px; /* Space between buttons */
+}
+
+/* Specific styles for each button type */
+.btn-success {
+    background-color: #28a745; /* Custom green color */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Custom red color */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Custom gray color */
+}
+
+/* Add hover effects for buttons */
+.btn:hover {
+    opacity: 0.8; /* Slightly transparent on hover */
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+}
