@@ -38,6 +38,10 @@
             <a href="manage-inventory.php" class="btn btn-success border border-white">
                 <i class="bi bi-gear-fill"></i> Manage Inventory
             </a>
+            <a href="sales-report.php" class="btn btn-success border border-white">
+                <i class="bi bi-file-earmark-bar-graph"></i> View Sales Report
+            </a>
+
         </div>
     </div>
     <div class="offcanvas-footer">
