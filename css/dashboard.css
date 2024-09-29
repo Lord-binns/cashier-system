@@ -5,9 +5,12 @@
 
 .table-responsive {
     overflow-x: auto; /* Enable horizontal scrolling */
-    margin-top: 20px; /* Optional: Space above the table */
+    margin-top: 20px; /* Space above the table */
 }
 
+.card {
+    background-color: #495057; /* Darker card background */
+}
 
 /* Custom styles for the offcanvas sidebar */
 .offcanvas {
@@ -32,6 +35,7 @@
 /* Modify button styles */
 .btn {
     margin-bottom: 10px; /* Space between buttons */
+    border-radius: 4px; /* Rounded corners for buttons */
 }
 
 /* Specific styles for each button type */
@@ -45,6 +49,15 @@
 
 .btn-secondary {
     background-color: #6c757d; /* Custom gray color */
+}
+
+.btn-warning {
+    background-color: #ffc107; /* Custom warning color */
+    color: #000; /* Black text for contrast */
+}
+
+.btn-warning:hover {
+    background-color: #e0a800; /* Darker warning on hover */
 }
 
 /* Add hover effects for buttons */
@@ -62,12 +75,6 @@
 
 .btn-secondary:hover {
     background-color: #5a6268; /* Darker gray on hover */
-}
-
-/* General body styles */
-body {
-    font-family: Arial, sans-serif; /* Set a default font */
-    background-color: #f8f9fa; /* Light background color */
 }
 
 /* Navbar styles */
@@ -125,20 +132,6 @@ body {
 
 .modal-header {
     border-bottom: 1px solid #dee2e6; /* Border below header */
-}
-
-/* Button styles */
-.btn {
-    border-radius: 4px; /* Rounded corners for buttons */
-}
-
-.btn-warning {
-    background-color: #ffc107; /* Custom warning color */
-    color: #000; /* Black text for contrast */
-}
-
-.btn-warning:hover {
-    background-color: #e0a800; /* Darker warning on hover */
 }
 
 /* Scrollable Table */

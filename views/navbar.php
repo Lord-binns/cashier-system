@@ -21,33 +21,32 @@
 </nav>
 
 <!-- Offcanvas Logout Menu -->
-<div class="offcanvas offcanvas-end d-flex flex-column" tabindex="-1" id="offcanvasLogout" aria-labelledby="offcanvasLogoutLabel" style="height: 100%;">
+<div class="offcanvas offcanvas-end d-flex flex-column bg-dark text-white" tabindex="-1" id="offcanvasLogout" aria-labelledby="offcanvasLogoutLabel" style="height: 100%;">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasLogoutLabel"> Menu Options</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title" id="offcanvasLogoutLabel">Menu Options</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body flex-grow-1">
-        <p> Admin Nav Bar</p>
+        <p>Admin Nav Bar</p>
         <div class="d-grid gap-2">
-            
-        <a href="dashboard.php" class="btn btn-secondary">
-    <i class="bi bi-grid"></i> Back to Dashboard
-</a>
-
-            <a href="adminList.php" class="btn btn-success">
+            <a href="dashboard.php" class="btn btn-secondary border border-white">
+                <i class="bi bi-grid"></i> Back to Dashboard
+            </a>
+            <a href="adminList.php" class="btn btn-success border border-white">
                 <i class="bi bi-person"></i> Edit Users
             </a>
-            <a href="manage-inventory.php" class="btn btn-success">
+            <a href="manage-inventory.php" class="btn btn-success border border-white">
                 <i class="bi bi-gear-fill"></i> Manage Inventory
             </a>
         </div>
     </div>
     <div class="offcanvas-footer">
         <div class="d-grid gap-2">
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#logoutConfirmationModal">Logout</button>
+            <button type="button" class="btn btn-danger border border-white" data-bs-toggle="modal" data-bs-target="#logoutConfirmationModal">Logout</button>
         </div>
     </div>
 </div>
+
 
 <!-- Logout Confirmation Modal -->
 <div class="modal fade" id="logoutConfirmationModal" tabindex="-1" aria-labelledby="logoutConfirmationModalLabel" aria-hidden="true">

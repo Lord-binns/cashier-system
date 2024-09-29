@@ -28,6 +28,18 @@ $products = $product->displayProducts();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #343a40; /* Dark background color */
+            color: white; /* Change text color to white */
+        }
+        h1 {
+            color: #212529; /* Dark color for h1 text */
+        }
+        .card {
+            background-color: #495057; /* Darker card background */
+        }
+    </style>
 </head>
 <body>
 <?php include 'navbar.php'; ?> <!-- Include the navbar -->
@@ -35,11 +47,7 @@ $products = $product->displayProducts();
     <div class="container mt-5">
         <h1 class="display-4 text-center">Manage Inventory</h1>
 
-        <!-- Back to Dashboard Button -->
-        <div class="mb-3 text-start">
-            <a href="dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
-        </div>
-
+       
         <!-- Add Product Button -->
         <div class="text-end mb-3">
             <a href="add-product.php" class="btn btn-success">Add Product</a>

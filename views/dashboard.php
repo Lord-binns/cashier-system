@@ -46,6 +46,21 @@ if (isset($_POST['add_to_cart'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
 
+
+    <style>
+        body {
+            background-color: #343a40; /* Dark background color */
+            color: white; /* Change text color to white */
+        }
+        h1 {
+            color: #212529; /* Dark color for h1 text */
+        }
+        .card {
+    background-color: rgba(73, 80, 87, 0.8); /* Semi-transparent dark background */
+    border: 1px solid #343a40; /* Dark border color */
+}
+
+    </style>
 </head>
 
 <body>
