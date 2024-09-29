@@ -24,7 +24,7 @@ class Product extends Database {
     }
 
     public function editProduct($id, $product_name, $price, $quantity) {
-        $sql = "UPDATE products SET product_name = ?, price = ?, quantity = ? WHERE id = ?";
+        $sql = "UPDATE products SET product_name = ?, price = ?, quantity = ? WHERE product_id = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("sdii", $product_name, $price, $quantity, $id); // Bind the parameters
         
@@ -65,9 +65,9 @@ class Product extends Database {
         }
     }
     
-    public function displaySpecificProduct($id) {
+    public function displaySpecificProduct($product_id) {
         // Prepare SQL query
-        $sql = "SELECT * FROM products WHERE id = ?";
+        $sql = "SELECT * FROM products WHERE product_id = ?";
         $stmt = $this->conn->prepare($sql);
     
         // Check if the SQL statement was prepared correctly
@@ -76,7 +76,7 @@ class Product extends Database {
         }
     
         // Bind the product ID
-        $stmt->bind_param("i", $id);
+        $stmt->bind_param("i", $product_id);
     
         // Check if the query executed successfully
         if (!$stmt->execute()) {
@@ -90,19 +90,19 @@ class Product extends Database {
         if ($result->num_rows > 0) {
             return $result->fetch_assoc();  // Return the product details
         } else {
-            echo "No product found with ID: $id.<br>"; // Debugging output
+            echo "No product found with ID: $product_id.<br>"; // Debugging output
             return null;  // No product found
         }
     }
 
     // Method to delete a product by its ID
-    public function deleteProduct($id) {
+    public function deleteProduct($product_id) {
         // Prepare the SQL query to delete the product
-        $sql = "DELETE FROM products WHERE id = ?";
+        $sql = "DELETE FROM products WHERE product_id = ?";
         $stmt = $this->conn->prepare($sql); // Use $this->conn here safely
 
         if ($stmt) {
-            $stmt->bind_param("i", $id); // Bind the product ID
+            $stmt->bind_param("i", $product_id); // Bind the product ID
             if ($stmt->execute()) {
                 return true;
             } else {

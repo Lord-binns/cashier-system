@@ -64,10 +64,14 @@ if (isset($_POST['add_to_cart'])) {
 </head>
 
 <body>
+
     <?php include 'navbar.php'; ?> <!-- Include the navbar -->
 
-    <div class="container mt-5 pt-5">
-        <h1 class="display-4 text-center">Cashiering Dashboard</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="display-3 text-center">Dashboard</h1>
+            </div>
 
         <h2>Select Products</h2>
         <div class="row">
@@ -76,18 +80,18 @@ if (isset($_POST['add_to_cart'])) {
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title"><?= $p['product_name']; ?></h5>
-                        <p class="card-text">Price: $<?= $p['price']; ?></p>
+                        <p class="card-text">Price: Php <?= $p['price']; ?></p>
                         <p class="card-text">Stock: <?= $p['quantity']; ?></p>
                     </div>
                     <div class="card-footer text-end">
                         <form action="dashboard.php" method="post">
-                            <input type="hidden" name="product_id" value="<?= $p['id']; ?>">
+                            <input type="hidden" name="product_id" value="<?= $p['product_id']; ?>">
                             <button type="submit" name="add_to_cart" class="btn btn-primary">
                                 <i class="bi bi-cart-plus"></i> Add to Cart
                             </button>
                             <?php 
-                            if (isset($_SESSION['cart'][$p['id']])): 
-                                $cart_quantity = $_SESSION['cart'][$p['id']]['quantity']; 
+                            if (isset($_SESSION['cart'][$p['product_id']])): 
+                                $cart_quantity = $_SESSION['cart'][$p['product_id']]['quantity']; 
                             ?>
                                 <span class="badge bg-secondary ms-2">In Cart: <?= $cart_quantity; ?></span>
                             <?php endif; ?>
