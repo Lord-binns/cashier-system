@@ -4,18 +4,14 @@ $product = new Product();
 
 // Handle product edit
 if (isset($_POST['edit_product'])) {
-    // Get the product ID from the URL
     $id = $_GET['id']; 
-    
-    // Get the form data for product updates
     $product_name = $_POST['product_name'];
     $price = $_POST['price'];
     $quantity = $_POST['quantity'];
 
-    // Update the product in the database
     if ($product->editProduct($id, $product_name, $price, $quantity)) {
-        // Redirect to the dashboard if successful
-        header("Location: ../views/dashboard.php");
+        // Redirect to the edit page with a success parameter
+        header("Location: ../views/edit-product.php?id=$id&success=Products updated successfully.");
         exit;
     } else {
         die("Failed to update the product.");

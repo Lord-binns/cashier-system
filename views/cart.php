@@ -61,54 +61,112 @@ if (isset($_GET['delete'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+        }
+
+        .card {
+            margin-top: 40px;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+        }
+
+        .form-control {
+            border: 2px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        .btn-sec, .btn-success {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        th {
+            background-color: grey;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="display-4 text-center">Checkout</h1>
 
-        <!-- Cart Items -->
-        <h2>Cart Items</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($_SESSION['cart'] as $product_id => $item): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8'); ?></td>
-                        <td><?= number_format($item['price'], 2); ?></td>
-                        <td><?= $item['quantity']; ?></td>
-                        <td><?= number_format($item['price'] * $item['quantity'], 2); ?></td>
-                        <td>
-                            <!-- Delete Button -->
-                            <a href="cart.php?delete=<?= $product_id ?>" class="btn btn-danger btn-sm">Delete</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-                <tr>
-                    <td colspan="3"><strong>Total</strong></td>
-                    <td colspan="2"><strong><?= number_format($total, 2); ?></strong></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Payment Form -->
-        <form action="cart.php" method="post">
-            <div class="mb-3">
-                <label for="payment" class="form-label">Enter Payment</label>
-                <input type="number" name="payment" id="payment" class="form-control" min="<?= $total; ?>" required>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="h2">Checkout</h1>
             </div>
-            <button type="submit" name="process_payment" class="btn btn-success">Process Payment</button>
-        </form>
+            <div class="card-body">
 
-        <div class="mt-3">
-            <a href="dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
+                <!-- Cart Items -->
+                <h2 class="h4 text-primary">Cart Items</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($_SESSION['cart'] as $product_id => $item): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8'); ?></td>
+                                <td><?= number_format($item['price'], 2); ?></td>
+                                <td><?= $item['quantity']; ?></td>
+                                <td><?= number_format($item['price'] * $item['quantity'], 2); ?></td>
+                                <td>
+                                    <!-- Delete Button -->
+                                    <a href="cart.php?delete=<?= $product_id ?>" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        <tr>
+                            <td colspan="3"><strong>Total</strong></td>
+                            <td colspan="2"><strong><?= number_format($total, 2); ?></strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Payment Form -->
+                <form action="cart.php" method="post">
+                    <div class="mb-3">
+                        <label for="payment" class="form-label text-secondary">Enter Payment</label>
+                        <input type="number" name="payment" id="payment" class="form-control" min="<?= $total; ?>" required>
+                    </div>
+                    <button type="submit" name="process_payment" class="btn btn-primary w-100">Process Payment</button>
+                </form>
+
+                <div class="mt-3 text-center">
+                    <a href="dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
+                </div>
+            </div>
         </div>
     </div>
 

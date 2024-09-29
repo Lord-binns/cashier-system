@@ -38,23 +38,28 @@
             <h1 class="display-4">Add New Product</h1>
         </div>
         <div class="card-body">
-            <form action="../actions/product-actions.php" method="POST">
-                <div class="mb-3">
-                    <label for="product_name" class="form-label">Product Name</label>
-                    <input type="text" name="product_name" id="product_name" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="price" class="form-label">Price</label>
-                    <input type="number" name="price" id="price" class="form-control" step="0.01" required>
-                </div>
-                <div class="mb-3">
-                    <label for="quantity" class="form-label">Quantity</label>
-                    <input type="number" name="quantity" id="quantity" class="form-control" required>
-                </div>
-                <button type="submit" name="add_product" class="btn btn-success">Add Product</button>
-            </form>
+    <form action="../actions/product-actions.php" method="POST">
+        <div class="mb-3">
+            <label for="product_name" class="form-label">Product Name</label>
+            <input type="text" name="product_name" id="product_name" class="form-control" required>
         </div>
-    </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" name="price" id="price" class="form-control" step="0.01" required>
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" name="quantity" id="quantity" class="form-control" required>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type="submit" name="add_product" class="btn btn-success">Add Product</button>
+            <a href="manage-inventory.php" class="btn btn-danger">
+                <i class="bi bi-back-arrow"></i> Back
+            </a>
+        </div>
+    </form>
+</div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

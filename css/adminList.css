@@ -1,3 +1,36 @@
+.table {
+    border: 2px solid white; /* White border around the table */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow for rounded corners */
+    background-color: #ffffff;
+}
+
+.table th, .table td {
+    border: 1px solid white; /* White borders for table cells */
+    padding: 12px; /* Increased padding for better spacing */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.1); /* Light background for odd rows */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #8aa5bf; /* Light background for odd rows */
+}
+.table-dark {
+    background-color: #495057; /* Darker background for header */
+    color: white; /* White text for header */
+}
+
+.table th {
+    background-color: #343a40; /* Dark background for table header */
+    color: #ffffff; /* White text for header */
+}
+
+.table-responsive {
+    margin-top: 20px; /* Space above the table */
+}
+
 .navbar-brand {
     font-size: 2rem;
     color: #f8f9fa !important;
@@ -91,80 +124,4 @@
 
 .navbar .nav-link:hover {
     color: #ffc107; /* Yellow color on hover */
-}
-
-/* Container styles */
-.container {
-   
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px; /* Padding inside the container */
-}
-.container {
-    border: 2px solid white; /* White border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px; /* Padding inside the container */
-    margin-top: 50px; /* Space from the top */
-}
-
-/* Table styles */
-
-
-.table {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full width */
-    border: 2px solid white; /* White border for the table */
-}
-
-.table th,
-.table td {
-    padding: 12px; /* Padding for cells */
-    text-align: left; /* Align text to the left */
-    border: 1px solid white; /* White border for table cells */
-}
-
-
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f2f2f2; /* Light gray for odd rows */
-}
-
-.table-dark {
-    background-color: #343a40; /* Dark background for table header */
-    color: #ffffff; /* White text for header */
-}
-
-/* Alert styles */
-.alert {
-    margin-bottom: 20px; /* Space below alerts */
-}
-
-/* Modal styles */
-.modal-content {
-    border-radius: 8px; /* Rounded corners for modals */
-}
-
-.modal-header {
-    border-bottom: 1px solid #dee2e6; /* Border below header */
-}
-
-/* Scrollable Table */
-.scrollable-table {
-    overflow-x: auto; /* Enable horizontal scrolling */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px; /* Reduce padding on smaller screens */
-    }
-
-    .table th,
-    .table td {
-        padding: 8px; /* Smaller padding for cells */
-    }
-
-    .btn {
-        font-size: 0.9rem; /* Smaller button text */
-    }
 }

@@ -31,7 +31,13 @@ if (isset($_POST['add_to_cart'])) {
             $_SESSION['cart'][$product_id]['quantity'] += $quantity;
         }
     } else {
-        echo "<p class='text-danger'>Not enough stock available for this product.</p>";
+        // Trigger the modal for stock warning
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var myModal = new bootstrap.Modal(document.getElementById('stockWarningModal'));
+                myModal.show();
+            });
+        </script>";
     }
 }
 ?>
@@ -48,16 +54,21 @@ if (isset($_POST['add_to_cart'])) {
 
 
     <style>
-        body {
-            background-color: #343a40; /* Dark background color */
-            color: white; /* Change text color to white */
+              body {
+            background-color: #343a40; /* Dark background */
+            color: white; /* Light text color */
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Flexbox for centering */
+            align-items: center; /* Vertically center */
+            justify-content: center; /* Horizontally center */
+            margin: 0; /* Remove default margin */
         }
         h1 {
-            color: #212529; /* Dark color for h1 text */
+            color: lightblue; /* Dark color for h1 text */
         }
         .card {
     background-color: rgba(73, 80, 87, 0.8); /* Semi-transparent dark background */
-    border: 1px solid #343a40; /* Dark border color */
+    border: 2px solid white; /* White border */
 }
 
     </style>
@@ -68,10 +79,11 @@ if (isset($_POST['add_to_cart'])) {
     <?php include 'navbar.php'; ?> <!-- Include the navbar -->
 
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-12">
+    <div class="col-md-12">
                 <h1 class="display-3 text-center">Dashboard</h1>
             </div>
+    <div class="row">
+          
 
         <h2>Select Products</h2>
         <div class="row">
@@ -108,6 +120,24 @@ if (isset($_POST['add_to_cart'])) {
             </a>
         </div>
     </div>
+
+<!-- Modal HTML for Stock Warning -->
+<div class="modal fade" id="stockWarningModal" tabindex="-1" aria-labelledby="stockWarningLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="stockWarningLabel" style="color: red;">Warning</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="color: black;"> <!-- Message in black -->
+            Not enough stock available for this product.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -37,17 +37,22 @@ if (isset($_GET['message'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin User List</title>
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/adminList.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #343a40; /* Dark background color */
-            color: white; /* Change text color to white */
+              body {
+            background-color: #343a40; /* Dark background */
+            color: white; /* Light text color */
+            height: 120vh; /* Full viewport height */
+            display: flex; /* Flexbox for centering */
+            align-items: center; /* Vertically center */
+            justify-content: center; /* Horizontally center */
+            margin: 0; /* Remove default margin */
         }
         h1 {
-            color: #212529; /* Dark color for h1 text */
+            color: white; /* Dark color for h1 text */
         }
         .card {
             background-color: #495057; /* Darker card background */
@@ -59,8 +64,11 @@ if (isset($_GET['message'])) {
 <?php include 'navbar.php'; ?> <!-- Include the navbar -->
 
 <div class="container mt-5">
-    <h1 class="text-center">Admin User List</h1>
-
+    
+   
+    <div class="col-md-12">
+                <h1 class="display-3 text-center"> Admin User List</h1>
+            </div>
     <!-- Message Display -->
     <?php if ($message): ?>
         <div class="alert alert-success"><?= $message; ?></div>

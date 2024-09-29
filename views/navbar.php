@@ -57,10 +57,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="logoutConfirmationModalLabel">Confirm Logout</h5>
+                <h5 class="modal-title" id="logoutConfirmationModalLabel" style="color: black;">Confirm Logout</h5> <!-- Black text for the title -->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="color: black;"> <!-- Black text for the body -->
                 Are you sure you want to logout?
             </div>
             <div class="modal-footer">
@@ -70,3 +70,4 @@
         </div>
     </div>
 </div>
+

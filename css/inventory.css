@@ -1,3 +1,52 @@
+.card {
+    background-color: white; /* White background */
+    border: 2px solid #dee2e6; /* Light border for subtlety */
+    color: #212529; /* Dark text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.table {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full width */
+    border: 1px solid #dee2e6; /* Light border for table */
+}
+
+h1 {
+    color: white; /* Dark color for h1 text */
+}
+
+.table th,
+.table td {
+    padding: 12px; /* Padding for cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #dee2e6; /* Light border for table cells */
+    color: #212529; /* Dark text color */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #aaacad; /* Light gray for odd rows */
+}
+
+.table-dark {
+    background-color: #343a40; /* Dark background for header */
+    color: #ffffff; /* White text */
+}
+
+.alert {
+    background-color: #f8f9fa; /* Light background for alerts */
+    color: #212529; /* Dark text */
+    border: 1px solid #dee2e6; /* Light border */
+}
+
+.container {
+    border: none; /* Remove border for a cleaner look */
+    background-color: #f8f9fa; /* Light background */
+    color: #212529; /* Dark text color */
+    padding: 20px; /* Padding inside the container */
+    margin-top: 50px; /* Space from the top */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(248, 246, 246, 0.2); /* Subtle shadow for depth */
+}
 .navbar-brand {
     font-size: 2rem;
     color: #f8f9fa !important;
@@ -91,80 +140,4 @@
 
 .navbar .nav-link:hover {
     color: #ffc107; /* Yellow color on hover */
-}
-
-/* Container styles */
-.container {
-   
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px; /* Padding inside the container */
-}
-.container {
-    border: 2px solid white; /* White border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px; /* Padding inside the container */
-    margin-top: 50px; /* Space from the top */
-}
-
-/* Table styles */
-
-
-.table {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full width */
-    border: 2px solid white; /* White border for the table */
-}
-
-.table th,
-.table td {
-    padding: 12px; /* Padding for cells */
-    text-align: left; /* Align text to the left */
-    border: 1px solid white; /* White border for table cells */
-}
-
-
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f2f2f2; /* Light gray for odd rows */
-}
-
-.table-dark {
-    background-color: #343a40; /* Dark background for table header */
-    color: #ffffff; /* White text for header */
-}
-
-/* Alert styles */
-.alert {
-    margin-bottom: 20px; /* Space below alerts */
-}
-
-/* Modal styles */
-.modal-content {
-    border-radius: 8px; /* Rounded corners for modals */
-}
-
-.modal-header {
-    border-bottom: 1px solid #dee2e6; /* Border below header */
-}
-
-/* Scrollable Table */
-.scrollable-table {
-    overflow-x: auto; /* Enable horizontal scrolling */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px; /* Reduce padding on smaller screens */
-    }
-
-    .table th,
-    .table td {
-        padding: 8px; /* Smaller padding for cells */
-    }
-
-    .btn {
-        font-size: 0.9rem; /* Smaller button text */
-    }
 }
